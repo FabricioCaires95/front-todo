@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="badge">
+        <button  mat-stroked-button color="primary" matBadge="{{todoClosed}}">Todo finished</button>
+
+    </div>
+    <button class="new-todo mat-elevation-z8" mat-raised-button color="primary">New Todo</button>
+
+    <div class="content" *ngFor="let item of list">
+        <mat-card class="mat-elevation-z8">
+            <p>deadline: {{item.deadline}}</p>
+            <mat-card-header>
+              <mat-card-title>{{ item.title }}</mat-card-title>
+              <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <div class="actions">
+                <button mat-mini-fab color="primary">
+                    <mat-icon>done</mat-icon>
+                </button>
+                <button mat-mini-fab color="accent">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-mini-fab color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-card>
+    </div>
+
+</div>
