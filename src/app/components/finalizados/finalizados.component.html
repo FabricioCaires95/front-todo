@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Tasks Finished</h1>
+    <div class="badge">
+        <button (click)="backToOpenTodo()"  mat-stroked-button color="primary"> Back to Open Todo itens</button>
+
+    </div>
+
+    <div class="content" *ngFor="let item of closeTodoList">
+        <mat-card class="mat-elevation-z8">
+            <p>deadline: {{item.deadline}}</p>
+            <mat-card-header>
+              <mat-card-title>{{ item.title }}</mat-card-title>
+              <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+</div>
