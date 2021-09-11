@@ -10,7 +10,8 @@ import { TodoService } from 'src/app/services/todo.service';
 export class ReadAllComponent implements OnInit {
 
   todoClosed = 0;
-  list: Todo[] = []
+  list: Todo[] = [];
+  closeTodoList: Todo[] = [];
 
   constructor(private service: TodoService) { }
 
@@ -22,15 +23,11 @@ export class ReadAllComponent implements OnInit {
     this.service
         .findAll()
         .subscribe((response)=> {
-          this.list = response;
-          this.countTodoClosed();
-        })
+          this.list = response.filter(todo => todo.status);
+          this.closeTodoList = response.filter(todo => !todo.status);
+          this.todoClosed = this.closeTodoList.length;
+        });
   }
 
-  countTodoClosed(): void {
-    this.list.filter(todo => {
-      todo.status ? this.todoClosed++: 0;
-    })
-  }
 
 }
