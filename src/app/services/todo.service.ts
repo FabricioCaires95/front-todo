@@ -18,6 +18,10 @@ export class TodoService {
     return this.http.get<Todo[]>(this.baseUrl + '/all')
   }
 
+  update(newItem: Todo): Observable<Todo> {
+    return this.http.put<Todo>(`${this.baseUrl}/update`, newItem);
+  }
+
   delete(id: any): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }

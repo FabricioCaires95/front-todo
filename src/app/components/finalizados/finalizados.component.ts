@@ -21,7 +21,7 @@ export class FinalizadosComponent implements OnInit {
   findAll(): void {
     this.service
         .findAll()
-        .subscribe((response)=> {          
+        .subscribe((response) => {          
           this.closeTodoList = response.filter(todo => !todo.status);
         });
   }
