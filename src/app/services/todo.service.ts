@@ -26,6 +26,11 @@ export class TodoService {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 
+  create(newTask: Todo): Observable<Todo> {
+    return this.http.post<Todo>(`${this.baseUrl}/create`, newTask);
+  }
+
+
   message(msg: string): void {
     this.snackbar.open(`${msg}`, 'OK', {
       horizontalPosition: 'end',

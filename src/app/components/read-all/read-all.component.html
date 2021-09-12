@@ -3,7 +3,7 @@
         <button (click)="toFinishTodo()" mat-stroked-button color="primary" matBadge="{{todoClosed}}">Go to finished tasks </button>
 
     </div>
-    <button class="new-todo mat-elevation-z8" mat-raised-button color="primary">New Todo</button>
+    <button (click)="toCreateNewTaskPage()" class="new-todo mat-elevation-z8" mat-raised-button color="primary">New Todo</button>
 
     <div class="content" *ngFor="let item of list">
         <mat-card class="mat-elevation-z8">

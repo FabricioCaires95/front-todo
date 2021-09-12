@@ -55,4 +55,8 @@ export class ReadAllComponent implements OnInit {
     this.router.navigate(['finished'])
   }
 
+  toCreateNewTaskPage(): void {
+    this.router.navigate(['create'])
+  }
+
 }

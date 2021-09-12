@@ -2,7 +2,7 @@
   <h1>Create a new Task</h1>
   <mat-form-field class="deadline" appearance="fill">
     <mat-label>Date to conclude the task</mat-label>
-    <input matInput [matDatepicker]="dp3" disabled />
+    <input [(ngModel)]="todo.deadline" name="todo.deadline" matInput [matDatepicker]="dp3" disabled />
     <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
     <mat-datepicker #dp3 disabled="false"></mat-datepicker>
   </mat-form-field>
@@ -10,18 +10,18 @@
   <div class="forms">
     <mat-form-field class="basic-fields" appearance="fill">
         <mat-label>Title </mat-label>
-        <input matInput placeholder="Ex. Learn Portuguese" >
+        <input [(ngModel)]="todo.title" name="todo.title" matInput placeholder="Ex. Learn Portuguese" >
       </mat-form-field>
     
       <mat-form-field class="basic-fields" appearance="fill">
         <mat-label>Description</mat-label>
-        <textarea matInput placeholder="Ex. Learn portuguese until some date..."></textarea>
+        <textarea [(ngModel)]="todo.description" name="todo.description" matInput placeholder="Ex. Learn portuguese until some date..."></textarea>
       </mat-form-field>
   </div>
 
   <div class="buttons">
-    <button mat-stroked-button color="primary">create</button>
-    <button mat-stroked-button color="warn">cancel</button>
+    <button (click)="createTodo()" mat-stroked-button color="primary">create</button>
+    <button (click)="cancel()" mat-stroked-button color="warn">cancel</button>
   </div>
 
 </form>
