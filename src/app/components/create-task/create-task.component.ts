@@ -15,7 +15,7 @@ export class CreateTaskComponent implements OnInit {
     title: '',
     description: '',
     deadline: new Date(),
-    status: false
+    status: true
   }
 
   constructor(private router: Router, private service: TodoService) { }
@@ -43,7 +43,7 @@ export class CreateTaskComponent implements OnInit {
 
   dateFormatter(): void {
     let date = new Date(this.todo.deadline);
-    this.todo.deadline = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+    this.todo.deadline = `${date.getDate()}/0${date.getMonth() + 1}/${date.getFullYear()}`
   }
 
 }
