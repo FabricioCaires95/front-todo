@@ -22,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
 import { FinalizadosComponent } from './components/finalizados/finalizados.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { UpdateTaskComponent } from './components/update-task/update-task.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
     FooterComponent,
     ReadAllComponent,
     FinalizadosComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    UpdateTaskComponent
   ],
   imports: [
     BrowserModule,
