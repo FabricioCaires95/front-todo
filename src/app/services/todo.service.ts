@@ -39,4 +39,8 @@ export class TodoService {
     });
   }
 
+  dateFormatter(date: Date): string {
+    return `${date.getDate()}/0${date.getMonth() + 1}/${date.getFullYear()}`;
+  }
+
 }

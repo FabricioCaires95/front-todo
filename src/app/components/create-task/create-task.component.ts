@@ -24,7 +24,7 @@ export class CreateTaskComponent implements OnInit {
   }
 
   createTodo(): void {
-    this.dateFormatter();
+    this.todo.deadline = this.service.dateFormatter(this.todo.deadline);
     this.service
       .create(this.todo)
       .subscribe((response) => {
@@ -39,11 +39,6 @@ export class CreateTaskComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate([''])
-  }
-
-  dateFormatter(): void {
-    let date = new Date(this.todo.deadline);
-    this.todo.deadline = `${date.getDate()}/0${date.getMonth() + 1}/${date.getFullYear()}`
   }
 
 }

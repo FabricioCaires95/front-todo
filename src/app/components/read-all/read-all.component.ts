@@ -11,21 +11,13 @@ import { TodoService } from 'src/app/services/todo.service';
 export class ReadAllComponent implements OnInit {
 
   todoClosed = 0;
-  list: Todo[] = [
-    {
-      id: "60",
-      title: 'test',
-      description: 'test',
-      deadline: new Date(),
-      status: false
-    }
-  ];
+  list: Todo[] = [];
   closeTodoList: Todo[] = [];
 
   constructor(private service: TodoService, private router: Router) { }
 
   ngOnInit(): void {
-    //this.findAll();
+    this.findAll();
   }
 
   findAll(): void {
