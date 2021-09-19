@@ -20,9 +20,9 @@ export class FinalizadosComponent implements OnInit {
 
   findAll(): void {
     this.service
-        .findAll()
+        .findPageable(0,3,true)
         .subscribe((response) => {          
-          this.closeTodoList = response.filter(todo => !todo.status);
+          this.closeTodoList = response["content"];
         });
   }
 

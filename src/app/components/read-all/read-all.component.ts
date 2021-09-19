@@ -22,16 +22,14 @@ export class ReadAllComponent implements OnInit {
 
   findAll(): void {
     this.service
-        .findAll()
-        .subscribe((response)=> {
-          this.list = response.filter(todo => todo.status);
-          this.closeTodoList = response.filter(todo => !todo.status);
-          this.todoClosed = this.closeTodoList.length;
+        .findPageable()
+        .subscribe((response) => {
+            this.list = response["content"];
         });
   }
 
   finishTask(item: Todo): void {
-    item.status = false;
+    item.isFinished = true;
     this.service.update(item)
         .subscribe(() => {
           this.service.message('Task finished successfully')

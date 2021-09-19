@@ -17,7 +17,7 @@ export class UpdateTaskComponent implements OnInit {
     title: history.state.title,
     description: history.state.description,
     deadline: history.state.deadline,
-    status: history.state.status
+    isFinished: history.state.status
   };
 
   constructor(private router: Router, private service: TodoService) { }

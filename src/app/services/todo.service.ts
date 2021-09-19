@@ -14,8 +14,14 @@ export class TodoService {
 
   constructor(private http: HttpClient, private snackbar: MatSnackBar) { }
 
-  findAll(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(this.baseUrl + '/all')
+  findAll(): Observable<any> {
+    return this.http.get<any[]>(this.baseUrl + '/all')
+  }
+
+  ///todo/all?page=2&size=5&isFinished=true
+  findPageable(page = 0, size = 3, isFinished = false): Observable<any> {
+     return this.http.get(`${this.baseUrl}/all?page=${page}&size=${size}&isFinished=${isFinished}`)
+
   }
 
   update(newItem: Todo): Observable<Todo> {
