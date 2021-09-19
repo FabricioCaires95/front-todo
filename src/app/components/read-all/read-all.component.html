@@ -17,7 +17,7 @@
                 <button (click)="finishTask(item)" mat-mini-fab color="primary">
                     <mat-icon>done</mat-icon>
                 </button>
-                <button [routerLink]="['/update']" [state]="{id: item.id, title: item.title, description: item.description, deadline: item.deadline, status: item.status}"  mat-mini-fab color="accent">
+                <button [routerLink]="['/update']" [state]="{id: item.id, title: item.title, description: item.description, deadline: item.deadline, isFinished: item.isFinished}"  mat-mini-fab color="accent">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button (click)="delete(item.id)" mat-mini-fab color="warn">

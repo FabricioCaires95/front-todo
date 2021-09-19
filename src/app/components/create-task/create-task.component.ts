@@ -15,7 +15,7 @@ export class CreateTaskComponent implements OnInit {
     title: '',
     description: '',
     deadline: new Date(),
-    status: true
+    isFinished: false
   }
 
   constructor(private router: Router, private service: TodoService) { }
