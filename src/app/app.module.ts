@@ -17,6 +17,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatPaginatorModule} from '@angular/material/paginator'
 
 import { FooterComponent } from './components/footer/footer.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
@@ -49,7 +50,8 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
     FormsModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

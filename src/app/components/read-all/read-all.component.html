@@ -1,11 +1,10 @@
 <div class="container">
     <div class="badge">
-        <button (click)="toFinishTodo()" mat-stroked-button color="primary">Go to finished tasks </button>
-
+        <button (click)="toFinishTodo()" mat-raised-button color="primary">Go to finished tasks </button>
+        <button (click)="toCreateNewTaskPage()" class="new-todo mat-elevation-z8" mat-raised-button color="primary">New Todo</button>
     </div>
-    <button (click)="toCreateNewTaskPage()" class="new-todo mat-elevation-z8" mat-raised-button color="primary">New Todo</button>
 
-    <div class="content" *ngFor="let item of list">
+    <div class="content" *ngFor="let item of list">       
         <mat-card class="mat-elevation-z8">
             <p>deadline: {{item.deadline}}</p>
             <mat-card-header>
@@ -26,5 +25,9 @@
             </div>
         </mat-card>
     </div>
-
+    <mat-paginator [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page">
+</mat-paginator>
 </div>
