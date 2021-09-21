@@ -20,7 +20,7 @@ export class TodoService {
 
   ///todo/all?page=2&size=5&isFinished=true
   findPageable(page = 0, size = 3, isFinished = false): Observable<any> {
-     return this.http.get(`${this.baseUrl}/all?page=${page}&size=${size}&isFinished=${isFinished}`)
+     return this.http.get(`${this.baseUrl}/all?page=${page}&pageSize=${size}&isFinished=${isFinished}`)
 
   }
 

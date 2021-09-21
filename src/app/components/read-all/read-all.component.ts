@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { Todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
@@ -13,19 +14,32 @@ export class ReadAllComponent implements OnInit {
   todoClosed = 0;
   list: Todo[] = [];
   closeTodoList: Todo[] = [];
+  pageIndex = 0;
+  pageSize = 3;
+  length = 9;
+
 
   constructor(private service: TodoService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.list.length)
     this.findAll();
   }
 
   findAll(): void {
     this.service
-        .findPageable()
+        .findPageable(this.pageIndex, 3, false)
         .subscribe((response) => {
+            console.log(response["content"]);
             this.list = response["content"];
         });
+  }
+
+  handlePageEvent(event: PageEvent) {
+    console.log(event.pageIndex)
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+    this.findAll();
   }
 
   finishTask(item: Todo): void {
