@@ -30,13 +30,11 @@ export class ReadAllComponent implements OnInit {
     this.service
         .findPageable(this.pageIndex, 3, false)
         .subscribe((response) => {
-            console.log(response["content"]);
             this.list = response["content"];
         });
   }
 
   handlePageEvent(event: PageEvent) {
-    console.log(event.pageIndex)
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
     this.findAll();
